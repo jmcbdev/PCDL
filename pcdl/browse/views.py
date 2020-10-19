@@ -3,4 +3,7 @@ from django.http import HttpResponse
 
 
 def index(request):
-    return HttpResponse("Welcome to PCDL")
+    context = {
+        'videos': Video.objects.all()
+    }
+    return render(request, 'browse/home.html, context')
