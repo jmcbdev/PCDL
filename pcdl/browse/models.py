@@ -3,10 +3,11 @@ from django.utils import timezone
 from django.contrib.auth.models import User
 
 class Video(models.Model):
-    title = models.CharField(max_length=100)"
-    video_file = models.FileField(upload_to='browse/', null=True, verbose_name="")
-    description = models.TextField()
-    genres = models.CharField(max_length=100)
+    title = models.CharField(max_length=100)
+    vid_description = models.TextField()
+    date_posted = models.DateTimeField(default=timezone.now)
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.title
+
