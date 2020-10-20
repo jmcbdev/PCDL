@@ -11,10 +11,20 @@ def index(request):
 
 
 def latest(request):
-    return render(request, 'browse/latest.html', {'title': 'Latest'})
+    context = {
+        'videos': Video.objects.filter(latest=True)
+    }
+    return render(request, 'browse/latest.html', context)
 
 def videos(request):
-    return render(request, 'browse/videos.html', {'title': 'Videos'})
+    context = {
+        'videos': Video.objects.filter(type_vid=True)
+    }
+    return render(request, 'browse/audios.html', context)
+
 
 def audios(request):
-    return render(request, 'browse/audios.html', {'title': 'Audios'})
+    context = {
+        'videos': Video.objects.filter(type_vid=False)
+    }
+    return render(request, 'browse/audios.html', context)
