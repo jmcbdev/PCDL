@@ -121,3 +121,7 @@ body {
   background-image: url("../browse/firstpic.png");
   background-size: cover;
 }
+.narrow-select {
+  width: 500px; 
+  align-items: center;
+}

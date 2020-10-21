@@ -1,8 +1,9 @@
-<!-- {% extends "browse/base.html" %}
+{% extends "browse/base.html" %}
 {% load crispy_forms_tags %}
+
 {% block content%}
-<div class="jumbotron jumbotron-fluid bg-gray vertical-center">
-    <div class="content-section">
+<div class="jumbotron jumbotron-fluid bg-gray vertical-center m-0">
+    <div class="content-section narrow-select" >
         <form method="POST">
             {% csrf_token %}
             <fieldset class="forms-group">
@@ -21,100 +22,4 @@
 
     </div>
 </div>
-    
-    
-{% endblock content %} -->
-
-{% load static %}
-{% load crispy_forms_tags %}
-<!DOCTYPE html>
-<head>
-     <!-- Required meta tags -->
-     <meta charset="utf-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
- 
-     <!-- Bootstrap CSS -->
-     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-     <link rel="stylesheet" type="text/css" href="{% static 'browse/main.css' %}">
-
-    {% if title%}
-        <title>PCDL - {{ title }}</title>
-    {% else %}
-        <title>PCDL</title>
-    {% endif%}
-
-</head>
-<body class="m-0">
-    <header class="site-header">
-        <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top ml-5 mr-5 mt-3">
-            
-            <a class="navbar-brand mr-8" href="{% url 'browse-home' %}">PCDL</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarToggle">
-            {% if user.is_authenticated %}
-            <div class="navbar-nav mr-auto">
-                <a class="nav-item nav-link" href="{% url 'browse-home' %}">Browse</a>
-                <a class="nav-item nav-link" href="{% url 'browse-latest' %}">Latest</a>
-                <a class="nav-item nav-link" href="{% url 'browse-videos' %}">Videos</a>
-                <a class="nav-item nav-link" href="{% url 'browse-audios' %}">Audios</a>
-            </div>
-            {% endif%}
-            <!-- Navbar Right Side -->
-            <div class="navbar-nav ml-auto">
-                {% if user.is_authenticated %}
-                    <a class="nav-item nav-link" href="{% url 'profile' %}">Profile</a>
-                    <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
-                {% else %}
-                    <a class="btn btn-dark btn-m active " href="{% url 'login' %}">Login</a>
-                {% endif%}
-            </div>
-            </div>
-        
-        </nav>
-    </header>
-    <div class="row">
-        <div class="col-md-8">
-        {% if messages %}
-            {% for message in messages %}
-                <div class="alert alert-{{ message.tags}}">
-                    {{ message }}
-                </div>
-            {% endfor%}
-        {% endif %}
-        </div>
-    </div>
-    <div class="jumbotron jumbotron-fluid bg-gray vertical-center">
-        <div class="content-section">
-            <form method="POST">
-                {% csrf_token %}
-                <fieldset class="forms-group">
-                    <legend class="border-bottom mb-4">Log In</legend>
-                    {{ form|crispy }}
-                </fieldset>
-                <div class="form-group">
-                    <button class="btn btn-outline-info" type="submit">Login</button>
-                </div>
-            </form>
-            <div class="border-top pt-3">
-                <small class="text-muted">
-                    Create an account? <a class="ml-2" href="{% url 'register' %}">Sign up</a>
-                </small>
-            </div>
-    
-        </div>
-    </div>
-        
-
-        
-    </main>
-    
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-</body>
-</html>
+{% endblock content %}
