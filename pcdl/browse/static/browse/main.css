@@ -32,11 +32,11 @@ body {
   
   .content-section {
     background: #ffffff;
-    padding: 10px 20px;
+    padding: 20px 20px;
     border: 1px solid white;
     border-radius: 3px;
     margin-bottom: 10px;
-    margin-right: 500px;
+    margin-right: 10px;
   }
   
   .article-title {
@@ -101,5 +101,5 @@ body {
 
 .card-text{
   font-size: small;
-  
+
 }
