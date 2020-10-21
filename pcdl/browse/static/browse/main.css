@@ -2,6 +2,8 @@ body {
     background: black;
     color: #333333;
     margin-top: 5rem;
+    margin-left: 90px;
+    margin-right: 90px;
   }
   
   h1, h2, h3, h4, h5, h6 {
@@ -84,3 +86,20 @@ body {
     font-size: 2.5rem;
   }
   
+.float-left {
+  margin: 5px;
+}
+
+.carousel-item .img {
+  width: 100%;
+  height: 200%;
+}
+
+.card-title{
+  font-size: small;
+}
+
+.card-text{
+  font-size: small;
+  
+}

@@ -1,14 +1,46 @@
 {% extends "browse/base.html" %}
 {% block content%}
+    <!-- <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+        <div class="carousel-item active">
+        <div class="d-flex align-items-center justify-content-center min-vh-100">
+            <img src="https://wallpaperset.com/w/full/8/1/6/172335.jpg#.X4-C2W1bVDM.link" alt="Max-width 100%">
+        </div>
+        </div>
+        
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+        </a>
+    </div> -->
     {% for post in videos%}
-        <article class="media content-section">
+    <div class="float-left">
+        <div class="card text-white bg-dark mb-3" style="width: 18rem;">
+            <img class="card-img-top" src="..." alt="Card image cap">
+            <div class="card-body">
+            <h5 class="card-title text-white">{{ post.title }}</h5>
+            <p class="card-text">{{ post.vid_description }}</p>
+            <a href="#" class="btn btn-outline-light">Play</a>
+            </div>
+        </div>
+    </div>
+        <!-- <article class="media content-section">
             <div class="media-body">
-            <!-- <div class="article-metadata">
+            <div class="article-metadata">
                 <small class="text-muted">{{ post.date_posted|date:"F d, Y" }}</small>
-            </div> -->
+            </div>
             <h2><a class="article-title" href="#">{{ post.title }}</a></h2>
             <p class="article-content">{{ post.vid_description }}</p>
             </div>
-        </article>
+        </article> -->
     {% endfor %}
 {% endblock content %}
