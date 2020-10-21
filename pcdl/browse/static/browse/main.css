@@ -7,7 +7,7 @@ body {
   }
   
   h1, h2, h3, h4, h5, h6 {
-    color: #444444;
+    color: #ffffff;
   }
   
   ul {
@@ -87,7 +87,7 @@ body {
   }
   
 .float-left {
-  margin: 5px;
+  margin: 2px;
 }
 
 .carousel-item .img {
@@ -96,10 +96,28 @@ body {
 }
 
 .card-title{
-  font-size: small;
+  font-size:0.7vw;
 }
 
 .card-text{
   font-size: small;
 
+}
+
+.vertical-center {
+  min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+  min-height: 100vh; /* These two lines are counted as one :-)       */
+
+
+  display: flex;
+  align-items: center; 
+}
+
+.center {
+  text-align: center;
+}
+
+.jumbotron {
+  background-image: url("../browse/firstpic.png");
+  background-size: cover;
 }
