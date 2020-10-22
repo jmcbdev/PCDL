@@ -1,8 +1,18 @@
-{% extends "browse/base.html" %}
+{% extends "browse/logbase.html" %}
 {% load crispy_forms_tags %}
 
 {% block content%}
 <div class="jumbotron jumbotron-fluid bg-gray vertical-center m-0">
+
+    <div class="container m-0 center" >
+        <div class="text-white">
+            <h1 class="display-5 text-white">Pastor Chris Digital library.</h1>
+            <p class="text-white"> Listen to life tranforming messages by Pastor Chris. </br> Join today.</p>
+        </div>
+        </br>
+
+    </div>
+    
     <div class="content-section narrow-select" >
         <form method="POST">
             {% csrf_token %}

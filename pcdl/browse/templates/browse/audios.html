@@ -1,15 +1,22 @@
 {% extends "browse/base.html" %}
+{% load static %}
 {% block content%}
-    {% for post in videos%}
-    <div class="float-left">
-        <div class="card text-white bg-dark mb-3" style="width: 18rem;">
-            <img class="card-img-top" src="..." alt="Card image cap">
-            <div class="card-body">
-            <h5 class="card-title text-white">{{ post.title }}</h5>
-            <p class="card-text">{{ post.vid_description }}</p>
-            <a href="#" class="btn btn-outline-light">Play</a>
+    
+    <div class="container m-5 mt-3">
+    </br>
+        <h3>Audios</h3>
+        {% for post in videos%}
+        <div class="float-left ">
+            <div class="card text-white bg-dark mb-auto" style="width: 17rem;">
+                <img class="card-img-top" src="{% static '/browse/firstpic.png' %}" alt="Card image cap">
+                <div class="card-body">
+                <h5 class="card-title text-white">{{ post.title }}</h5>
+                <p class="card-text">{{ post.vid_description }}</p>
+                <a href="#" class="btn btn-outline-light">Play</a>
+                </div>
             </div>
         </div>
+
+        {% endfor %}
     </div>
-    {% endfor %}
 {% endblock content %}

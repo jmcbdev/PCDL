@@ -36,7 +36,7 @@ body {
     border: 1px solid white;
     border-radius: 3px;
     margin-bottom: 10px;
-    margin-right: 10px;
+    margin-right: 80px;
   }
   
   .article-title {
@@ -124,4 +124,56 @@ body {
 .narrow-select {
   width: 500px; 
   align-items: center;
+}
+
+/* Carousel - Lenght to cover 65 percent of the screen */
+.carousel-item.active, .carousel-item .view {
+  height: 65vh!important;
+}
+
+.carousel-item img {
+  object-fit: cover;
+  width:100%!important;
+  height: 100% !important;
+}
+
+.content h1 {
+  font-size: 55px;
+}
+
+@media screen and (max-width: 320px) {
+  .content h1 {
+    font-size: 30px;
+  }
+}
+
+@media screen and (min-width: 321px) and (max-width: 768px) {
+  .content h1 {
+    font-size: 30px;
+  }
+
+  
+}
+
+.content h5 {
+  font-size: 23px;
+  margin-left: 80px;
+  margin-right: 80px;
+}
+
+@media screen and (max-width: 320px) {
+  .content h5 {
+    font-size: 18px;
+    margin-left: 20px;
+    margin-right: 20px
+  }
+
+}
+
+@media screen and (min-width: 321px) and (max-width: 768px) {
+  .content h5 {
+    font-size: 18px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
 }

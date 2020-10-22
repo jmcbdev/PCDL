@@ -25,7 +25,7 @@ def videos(request):
     context = {
         'videos': Video.objects.filter(type_vid=True)
     }
-    return render(request, 'browse/audios.html', context)
+    return render(request, 'browse/videos.html', context)
 
 @login_required
 def audios(request):

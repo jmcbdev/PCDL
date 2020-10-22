@@ -1,5 +1,4 @@
-{% load static %}
-{% load crispy_forms_tags %}
+{% load static%}
 <!DOCTYPE html>
 <head>
      <!-- Required meta tags -->
@@ -18,11 +17,17 @@
     {% endif%}
 
 </head>
-<body class="m-0">
+<body class="m-0 mb-5">
     <header class="site-header">
-        <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top ml-5 mr-5 mt-3">
-            
-            <a class="navbar-brand mr-8" href="{% url 'browse-home' %}">PCDL</a>
+        <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+        <div class="container-fluid ml-5 mr-5 mt-1">
+            <a class="navbar-brand ml-5 mr-4 font-weight-bold" href="{% url 'browse-home' %}" >
+                <!-- Logo Image -->
+                <img src="{% static '/browse/pcdl.png' %}" width="35" class="d-inline-block align-middle mr-2">
+                <!-- Logo Text -->
+
+                Pastor Chris Digital Library 
+            </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
@@ -34,18 +39,19 @@
                 <a class="nav-item nav-link" href="{% url 'browse-videos' %}">Videos</a>
                 <a class="nav-item nav-link" href="{% url 'browse-audios' %}">Audios</a>
             </div>
-            {% endif%}
+            {% endif %}
             <!-- Navbar Right Side -->
             <div class="navbar-nav ml-auto">
                 {% if user.is_authenticated %}
                     <a class="nav-item nav-link" href="{% url 'profile' %}">Profile</a>
                     <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
                 {% else %}
-                    <a class="btn btn-dark btn-m active " href="{% url 'login' %}">Login</a>
+                    <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
+                    <a class="nav-item nav-link" href="{% url 'register' %}">Register</a>
                 {% endif%}
             </div>
             </div>
-        
+        </div>
         </nav>
     </header>
     <div class="row">
@@ -59,19 +65,10 @@
         {% endif %}
         </div>
     </div>
-    <div class="jumbotron jumbotron-fluid bg-gray vertical-center">
-
-    </br>
-    <div class="container ml-auto center" >
-            <div class="text-white">
-                <h1 class="display-5 text-white">Pastor Chris Digital library.</h1>
-                <p class="text-white"> Listen to life tranforming messages by Pastor Chris. </br> Join today.</p>
-            </div>
-        </br>
-
-    </div>
+    {% block content %}{% endblock %}
         
 
+    
         
     </main>
     
