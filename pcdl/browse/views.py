@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views.generic import ListView, DetailView
 from .models import Video
 
@@ -15,11 +16,12 @@ def index(request):
     }
     return render(request, 'browse/home.html', context)
 
-class VideoListView(ListView):
+class VideoListView(LoginRequiredMixin, ListView):
     model = Video
     template_name = 'browse/home.html' # <app>/<model>_<viewtype>.html
     context_object_name = 'videos'
     ordering = ['date_posted']
+    paginate_by = 2
 
 class VideoDetailView(DetailView):
     model = Video

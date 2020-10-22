@@ -12,7 +12,7 @@
                 <div class="card-body">
                 <h5 class="card-title text-white">{{ post.title }}</h5>
                 <p class="card-text">{{ post.vid_description }}</p>
-                <a href="#" class="btn btn-outline-light">Play</a>
+                <a href="{% url 'video-detail' post.id %}" class="btn btn-outline-light">More Info</a>
                 </div>
             </div>
         </div>
