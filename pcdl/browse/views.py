@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
+from django.views.generic import ListView, DetailView
 from .models import Video
 
 
@@ -13,6 +14,15 @@ def index(request):
         'videos': Video.objects.all()
     }
     return render(request, 'browse/home.html', context)
+
+class VideoListView(ListView):
+    model = Video
+    template_name = 'browse/home.html' # <app>/<model>_<viewtype>.html
+    context_object_name = 'videos'
+    ordering = ['date_posted']
+
+class VideoDetailView(DetailView):
+    model = Video
 
 @login_required
 def latest(request):
