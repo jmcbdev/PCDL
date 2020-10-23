@@ -1,9 +1,8 @@
 {% extends "browse/logbase.html" %}
 {% load crispy_forms_tags %}
 
-{% block content%}
+{% block content %}
 <div class="jumbotron jumbotron-fluid bg-gray vertical-center m-0">
-
     <div class="container m-0 center" >
         <div class="text-white">
             <h1 class="display-5 text-white">Pastor Chris Digital library.</h1>
@@ -12,7 +11,6 @@
         </br>
 
     </div>
-    
     <div class="content-section narrow-select" >
         <form method="POST">
             {% csrf_token %}
@@ -22,14 +20,14 @@
             </fieldset>
             <div class="form-group">
                 <button class="btn btn-outline-info" type="submit">Login</button>
-                <small class="text-muted ml-2">
-                    <a href="{% url 'password_reset %}">Forgot password?</a>
-                </small>
             </div>
         </form>
         <div class="border-top pt-3">
             <small class="text-muted">
                 Create an account? <a class="ml-2" href="{% url 'register' %}">Sign up</a>
+            </small>
+            <small class="text-muted ml-2">
+                <a href="{% url 'password_reset' %}">Forgot password?</a>
             </small>
         </div>
 
