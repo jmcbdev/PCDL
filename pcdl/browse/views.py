@@ -9,19 +9,19 @@ from .models import Video
 def welcome(request):
     return render(request, 'browse/welcome.html')
 
-@login_required    
-def index(request):
-    context = {
-        'videos': Video.objects.all()
-    }
-    return render(request, 'browse/home.html', context)
+# @login_required    
+# def index(request):
+#     context = {
+#         'videos': Video.objects.all()
+#     }
+#     return render(request, 'browse/home.html', context)
 
 class VideoListView(LoginRequiredMixin, ListView):
     model = Video
     template_name = 'browse/home.html' # <app>/<model>_<viewtype>.html
     context_object_name = 'videos'
     ordering = ['date_posted']
-    paginate_by = 2
+    paginate_by = 4
 
 class VideoDetailView(DetailView):
     model = Video
@@ -35,13 +35,13 @@ def latest(request):
 @login_required
 def videos(request):
     context = {
-        'videos': Video.objects.filter(type_vid=True)
+        'videos': Video.objects.filter(is_vid=True)
     }
     return render(request, 'browse/videos.html', context)
 
 @login_required
 def audios(request):
     context = {
-        'videos': Video.objects.filter(type_vid=False)
+        'videos': Video.objects.filter(is_vid=False)
     }
     return render(request, 'browse/audios.html', context)
